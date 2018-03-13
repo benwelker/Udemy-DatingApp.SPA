@@ -1,8 +1,9 @@
-.dropdown-menu li {
+.dropdown-menu {
   cursor: pointer;
 }
 
 #dropdown03 {
+  cursor: pointer;
   margin-right: 25px;
 }
 
