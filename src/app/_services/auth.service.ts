@@ -2,7 +2,7 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/throw';
+import 'rxjs/add/observable/throw';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -15,7 +15,7 @@ constructor(private http: Http) { }
     login(model: any) {
         return this.http.post(this.baseUrl + 'login', model, this.requestOptions()).map((response: Response) => {
             const user = response.json();
-            if(user){
+            if (user) {
                 localStorage.setItem('token', user.tokenString);
                 this.userToken = user.tokenString;
             }
@@ -47,5 +47,4 @@ constructor(private http: Http) { }
         }
         return Observable.throw(modelStateErrors || 'Server error');
     }
-
 }
