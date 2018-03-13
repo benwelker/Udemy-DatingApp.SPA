@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Ensure navbar does not cover content */
+body {
+    padding-top: 65px;
+}
